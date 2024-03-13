@@ -1,12 +1,14 @@
-const newsRoute = require('./news');
+const newsRouter = require('./news');
+const meRouter = require('./me');
 const coursesRouter = require('./courses');
-const siteRoute = require('./site');
+const siteRouter = require('./site');
 
 function route(app) {
-    app.use('/news', newsRoute);
+    app.use('/news', newsRouter);
+    app.use('/me', meRouter);
     app.use('/courses', coursesRouter);
 
-    app.use('/', siteRoute);
+    app.use('/', siteRouter);
 }
 
 module.exports = route;
